@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>EuAtendo - Descubra onde você pode ser atendido</title>
+
+    <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../res/css/proj.css">
+    <link rel="stylesheet" href="../../res/css/carousel.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <!-- Página-->
+    <div class="corpo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class=" col-sm-8 formLogin">
+                    <h1>Login</h1>
+                    <hr>
+
+                    <form id="login" name="login" method="post">
+                        <div class="form-group">
+                            <label for="username">Usuário:</label>
+                            <input type="text" class="form-control" id="username" name="username" required aria-describedby="usernameHelp" placeholder="Informe o usuário">
+                            <small id="usernameHelp" class="form-text text-muted">Nunca informe seu usuário e senha para ninguém.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label> <input required type="password" class="form-control" id="password" name="password" placeholder="Senha">
+                        </div>
+                        <br>
+
+                        <div class="alert alert-danger invisible" id="alert" role="alert">
+                            Usuário ou senha inválidos, tente novamente.
+                        </div>
+                        <button class="btn btn-success btn-block btn-lg " id="botaologar">Entrar</button>
+                        <a href="../../app/esta/" class="btn btn-warning btn-block btn-lg " id="botaologar">Cadastre-se</a>
+                    </form>
+                </div>
+
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim da Página-->
+
+    <footer>
+    </footer>
+
+    <script src="../../res/js/jquery-3.3.1.min.js"></script>
+    <script src="../../res/js/popper.min.js"></script>
+    <script src="../../res/js/bootstrap.min.js"></script>
+    <script src="../../res/js/gymob.js"></script>
+    <script src="../../ctr/login/login.js"></script>
+</body>
+
+</html>
