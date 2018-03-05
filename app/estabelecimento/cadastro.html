@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="manifest" href="../../manifest.json">
+
+    <title>euAtendo</title>
+
+    <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../res/css/app.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <!-- CONTEÚDO -->
+    <div class="corpo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Cadastre seu estabelecimento!</h1>
+                    <hr>
+
+                    <h2>Dados do estabelecimento:</h2>
+                </div>
+            </div>
+            <form id="formcadastroestabelecimento">
+
+
+                <div class="form-group">
+                    <label for="estabelecimento">Estabelecimento:</label>
+                    <input type="text" class="form-control" name="nome" required aria-describedby="nome" placeholder="Informe o nome do estabelecimento">
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" class="form-control validate" name="cnpj" id="cnpj" required aria-describedby="cnpj" placeholder="Informe o CNPJ" maxlength="70">
+                  <div class="invalid-feedback " id="errocnpj">CNPJ inválido</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="cep" id="cep" required aria-describedby="cep" placeholder="Informe o CEP" maxlength="8">
+                        <div class="input-group-append">
+                            <button id="pesquisacep" class="btn btn-outline-primary" type="button"><i class="fas fa-search"></i> Pesquisar</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="uf">Estado:</label>
+                    <select type="text" class="form-control" name="uf" id="uf" required aria-describedby="uf" placeholder="Informe o Estado">            
+                    <option value="">Selecione</option>             
+                       <option value="SP">São Paulo</option>          
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Rorâima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" class="form-control" name="cidade" id="cidade" required aria-describedby="cidade" placeholder="Informe a Cidade">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" class="form-control" name="bairro" id="bairro" required aria-describedby="bairro" placeholder="Informe o Bairro">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" class="form-control" name="endereco" id="endereco" required aria-describedby="endereco" placeholder="Informe o Endereço">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" class="form-control" name="numero" id="numero" required aria-describedby="numero" placeholder="Informe o Número">
+                </div>
+                <div class="form-group">
+                    <label for="telefone_contato">Telefones para contato:</label>
+                    <input type="text" class="form-control" name="telefone_contato" required aria-describedby="telefone_contato" placeholder="Informe os telefones para contato da empresa">
+                </div>
+                <div class="form-group">
+                    <label for="email_contato">E-mails para contato:</label>
+                    <input type="text" class="form-control" name="email_contato" required aria-describedby="email_contato" placeholder="Informe e-mails para contato">
+                </div>
+                <hr>
+                <h2>Dados do responsável:</h2>
+
+                <div class="form-group">
+                    <label for="responsavel">Nome do Responsável:</label>
+                    <input type="text" class="form-control" name="responsavel" required aria-describedby="responsavel" placeholder="Informe o nome do responsável">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF do Responsável:</label>
+                    <input type="text" class="form-control validate" name="cpf" id="cpf" required aria-describedby="cpf" placeholder="Informe o CPF do responsável" maxlength="11">
+                  <div class="invalid-feedback " id="errocpf">CPF inválido</div>
+                </div>
+                <div class="form-group">
+                    <label for="dt_nascimento">Data de nascimento do Responsável:</label>
+                    <input type="text" class="form-control" name="dt_nascimento" required aria-describedby="dt_nascimento" placeholder="Informe a data de nascimento do responsável">
+                </div>
+                <hr>
+
+                <h2>Dados de acesso:</h2>
+                <div class="form-group">
+                    <label for="email_login">E-mail para login:</label>
+                    <input type="text" class="form-control"  name="email_login" required aria-describedby="email_login" placeholder="Informe o email para realizar login">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input required type="password" class="form-control" name="senha" id="senha" placeholder="Informe a senha desejada">
+                </div>
+                <div class="form-group">
+                    <label for="senha_confirmacao">Repita a senha</label>
+                    <input required type="password" class="form-control" name="senha_confirmacao" id="senha_confirmacao" placeholder="Repita a Senha">
+                  <div class="invalid-feedback " id="errocpf">Confirme sua senha.</div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="botaocadastrar">Cadastrar!</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- FIM DO CONTEÚDO -->
+    <footer>
+    </footer>
+
+    <script src="../../res/js/jquery-3.3.1.min.js"></script>
+    <script src="../../res/js/jquery.mask.min.js"></script>
+    <script src="../../res/js/popper.min.js"></script>
+    <script src="../../res/js/bootstrap.min.js"></script>
+    <script src="../../res/js/fontawesome-all.min.js"></script>
+    <script src="../../res/js/sweetalert.js"></script>
+    <script src="../../res/js/app.js"></script>
+    <script src="../../res/js/cep.js"></script>
+    <script src="../../res/js/cpfcnpjvalidator.js"></script>
+    <script src="../../ctr/estabelecimento/cadastro.js"></script>
+</body>
+
+</html>

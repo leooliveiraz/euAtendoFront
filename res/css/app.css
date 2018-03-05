@@ -1,0 +1,88 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    background-color: #f7f7f7;
+}
+
+footer {
+    margin-top: 15em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    line-height: 80px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+.footer p {
+    margin-bottom: 0px;
+}
+
+.footerlink {
+    color: #212529 !important;
+}
+
+/* index
+-------------------------------------------------- */
+
+.carregandoIndex {
+    padding-top: 10em;
+}
+
+
+/* Tela de Login
+-------------------------------------------------- */
+
+.formLogin {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+
+/* LOADING
+--------------------------------------------------- */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* enquanto estiver carregando, o scroll da página estará desativado */
+body.loading {
+    overflow: hidden;   
+}
+
+/* a partir do momento em que o body estiver com a classe loading,  o modal aparecerá */
+body.loading .modal {
+    display: block;
+}
+/* Toggler
+---------------------------------------------------- */
+.toggler{
+    border-color: rgba(255,255,255,0.1);
+    margin-right: 2em;
+}
+
+/* corpo */
+.corpo{
+    padding-top: 6em;
+}

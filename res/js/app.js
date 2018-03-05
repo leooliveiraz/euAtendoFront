@@ -40,15 +40,11 @@ $(document).on({
     ajaxStop: function() { $body.removeClass("loading"); }    
 });
 
-/* Menu Lateral */
-function menulateral(){
-    $("#wrapper").toggleClass("toggled");
-};
 
 $(document).ready(function(){
    $("header").load("../templates/cabecalho.html");
-   $("#sidebar").load("../templates/sidebar.html");
    $("footer").load("../templates/rodape.html");   
-   $("#fimsidebar").load("../templates/fimsidebar.html");
 });
+
+
 
