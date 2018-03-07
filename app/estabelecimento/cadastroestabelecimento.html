@@ -129,7 +129,8 @@
                 <h2>Dados de acesso:</h2>
                 <div class="form-group">
                     <label for="email_login">E-mail para login:</label>
-                    <input type="text" class="form-control"  name="email_login" required aria-describedby="email_login" placeholder="Informe o email para realizar login">
+                    <input type="text" class="form-control"  name="email_login" id="email_login" required aria-describedby="email_login" placeholder="Informe o email para realizar login">
+                  <div class="invalid-feedback " id="errocpf">Usuario já Existe.</div>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
@@ -160,7 +161,7 @@
     <script src="../../res/js/app.js"></script>
     <script src="../../res/js/cep.js"></script>
     <script src="../../res/js/cpfcnpjvalidator.js"></script>
-    <script src="../../ctr/estabelecimento/cadastro.js"></script>
+    <script src="../../ctr/estabelecimento/cadastroestabelecimento.js"></script>
 </body>
 
 </html>

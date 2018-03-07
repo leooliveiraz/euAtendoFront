@@ -18,12 +18,13 @@ function realizalogin(){
             localStorage.setItem('auth',data);
             localStorage.setItem('user',dados.username);
             localStorage.setItem('password',dados.password);
-            $(location).attr('href', '../home/home.html');
+            $(location).attr('href', '../estabelecimento/painel.html');
         },
         error: function(jqXhr, textStatus, errorThrown) {
             $("#username").addClass("is-invalid");
             $("#password").addClass("is-invalid");
             $("#alert").removeClass("invisible");
+            swal("Login Inválido","Informe o email e senha corretos","error");
         }
     }); 
 }

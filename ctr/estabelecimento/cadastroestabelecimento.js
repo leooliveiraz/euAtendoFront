@@ -1,6 +1,7 @@
  $(document).ready(function () {
      $("#cnpj").blur(validaCNPJ);
      $("#cpf").blur(validaCPF);
+     $("#email_login").blur(verificaUsuario);
  });
 
  function validaCNPJ() {
@@ -43,7 +44,27 @@ function cadastroEmpresa(){
             swal("Empresa cadastrada com sucesso!","Enviaremos um email para "+parametros.email_login+" para confirmar o cadastro.","success");
         },
         error: function(jqXhr, textStatus, errorThrown) {
-            swal("Ocorreu um problema",errorThrown,"error");
+            swal("Ocorreu um problema",jqXhr.responseText,"error");
+        }
+    }); 
+}
+
+
+function verificaUsuario(){    
+    var parametros = $("#email_login").val();
+    $.ajax({
+        type: 'POST',
+        url: urlapp+'usuario/verificaexistencia',
+        data: parametros,
+        success: function(data, textStatus, jQxhr) {
+            if(data==true){                
+                $("#email_login").addClass("is-invalid");
+            }else{                
+                $("#email_login").removeClass("is-invalid");
+            }
+        },
+        error: function(jqXhr, textStatus, errorThrown) {
+            console.log(textStatus);
         }
     }); 
 }
