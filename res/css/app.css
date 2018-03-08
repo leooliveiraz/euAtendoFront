@@ -86,3 +86,14 @@ body.loading .modal {
 .corpo{
     padding-top: 6em;
 }
+
+.cartao{
+    margin-top: 1em;
+}
+
+.linkcard:hover{
+    text-decoration: none !important;
+}
+.invisivel{
+    display: none;
+}

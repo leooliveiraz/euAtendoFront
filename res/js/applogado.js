@@ -7,6 +7,7 @@ function formToJSON(form){
     jQuery.each(array, function() {
         json[this.name] = this.value || '';
     });
+    console.log(json);
     return json;
 }
 
