@@ -18,6 +18,7 @@ function realizalogin(){
             localStorage.setItem('auth',data);
             localStorage.setItem('user',dados.username);
             localStorage.setItem('password',dados.password);
+            setaNomeEmpresa();
             $(location).attr('href', '../estabelecimento/painel.html');
         },
         error: function(jqXhr, textStatus, errorThrown) {
