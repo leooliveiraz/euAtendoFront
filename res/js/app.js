@@ -1,26 +1,6 @@
 var urlapp = 'http://localhost:9000/';
 
 
-function executaAjax(dado,metodo,caminho){
-    var parametros = JSON.stringify(dado);
-    var retorno = $.ajax({
-        type: metodo,
-        url: urlapp+caminho,
-        contentType: "application/json",
-        data: parametros,
-        success: function(data, textStatus, jQxhr) {
-            return data;
-
-        },
-        error: function(jqXhr, textStatus, errorThrown) {
-            console.log(errorThrown);
-            console.log(jqXhr);
-            console.log(textStatus);
-        }
-    }); 
-    return retorno;
-}
-
 function formToJSON(form){
     var array = jQuery(form).serializeArray();
     var json = {};
@@ -42,9 +22,54 @@ $(document).on({
 
 
 $(document).ready(function(){
-   $("header").load("../templates/cabecalho.html");
-   $("footer").load("../templates/rodape.html");   
+    if(localStorage.getItem("nomeestabelecimento") != null){
+       $("header").load("../templates/cabecalhologado.html");
+       $("footer").load("../templates/rodape.html");        
+       $("#sair").click(sair());   
+        setaNomeEmpresa();
+    }else{
+       $("header").load("../templates/cabecalho.html");
+       $("footer").load("../templates/rodape.html");           
+    }    
 });
 
 
+function setaNomeEmpresa(){
+    if(localStorage.getItem("nomeempresa") == null){
+        getNomeEmpresa();
+    }else{
+        $("#nomeestabelecimento").val(localStorage.getItem("nomeestabelecimento"));        
+    }
+}
 
+
+function getNomeEmpresa(){    
+    var parametros = localStorage.getItem('user');
+    $.ajax({
+        type: 'POST',
+        url: urlapp+'usuario/buscarnome',
+        data: parametros,
+        headers:  { "Authorization" : localStorage.getItem('auth') },
+        success: function(data, textStatus, jQxhr) {
+            localStorage.setItem('nomeestabelecimento',data.toUpperCase());
+            $("#nomeestabelecimento").text(data.toUpperCase());
+        },
+        error: function(jqXhr, textStatus, errorThrown) {
+            localStorage.removeItem('auth');
+            localStorage.removeItem('user');
+            localStorage.removeItem('password');
+            localStorage.removeItem('nomeestabelecimento');
+            $(location).attr('href', '../home/home.html');     
+        }
+    }); 
+}
+
+
+function sair(){
+           localStorage.removeItem('auth');
+            localStorage.removeItem('user');
+            localStorage.removeItem('password');
+            localStorage.removeItem('nomeestabelecimento');
+            $(location).attr('href', '../home/home.html');    
+     
+}
