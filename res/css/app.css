@@ -86,6 +86,10 @@ body.loading .modal {
     padding-top: 6em;
 }
 
+
+#conteudo{
+    height:800px;
+}
 .cartao{
     margin-top: 1em;
 }
@@ -95,4 +99,20 @@ body.loading .modal {
 }
 .invisivel{
     display: none;
+}
+/* Card Empresas
+---------------------------------------------------- */
+.cardempresa{
+    margin-bottom: 1em;
+    margin-top: 6em;
+}
+.cardlogoempresa{
+    margin-top: -7em;
+}
+.tituloaccordion{
+    font-size: 1.4em;
+}
+.corpoaccordion{
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
