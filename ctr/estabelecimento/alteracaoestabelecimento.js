@@ -79,6 +79,7 @@ function buscaempresa(){
             $("[name=responsavel]").val(empresa.responsavel);
             $("[name=cpf]").val(empresa.cpf);
             $("[name=dt_nascimento]").val(empresa.dt_nascimento);
+            $("[name=site]").val(empresa.site);
 
         },
         error: function(jqXhr, textStatus, errorThrown) {
