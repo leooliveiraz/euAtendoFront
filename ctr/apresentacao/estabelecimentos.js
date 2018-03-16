@@ -1,5 +1,6 @@
 // armazena o scrolltop do elemento que deseja aguardar
 var paginaatual = 0;
+var busca = "";
 var carregando = false;
 $(window).scroll(function () {
     var scrollTopoffset = $('#loadestabelecimento').offset().top - $(window).height();
@@ -24,7 +25,7 @@ function getEstabelecimentos() {
     $.ajax({
         type: 'GET',
         data: {
-            pagina: paginaatual
+            pagina: paginaatual, pesquisa: busca
         },
         async: false,
         url: urlapp + 'empresa/listarempresas',
@@ -71,7 +72,14 @@ function getEstabelecimentos() {
             }
         },
         error: function (jqXhr, textStatus, errorThrown) {
-            swal("Ocorreu um problema", jqXhr.responseText, "error");
+            console.log(jqXhr.responseText);
         }
     });
 }
+
+$("#botaopesquisar").click(function(event){
+    busca = $("#campopesquisa").val();
+    paginaatual = 0;
+    $("#rowempresa").text("");
+    getEstabelecimentos();
+});
