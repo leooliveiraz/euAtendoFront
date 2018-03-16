@@ -112,6 +112,20 @@
                     <label for="site">Site:</label>
                     <input type="text" class="form-control" name="site" required aria-describedby="site" placeholder="Informe o site do estabelecimento">
                 </div>
+                
+                <div class="form-group">
+                    <label for="botaoupload">Foto da Empresa:</label>
+                    <button class="btn btn-info btn-lg btn-block" id="botaoupload">Escolher Arquivo</button>
+                </div>
+
+                <div id="wrapper" class="col-12 bg-info "   style="display: none">
+                   <input type="hidden" name="fotoempresa" id="fotoempresa" />
+                    <input id="fileUpload" type="file" style="display: none">
+                    <div id="image-holder" class="text-center">
+                        <img class="rounded-circle img-thumbnail imguploadempresa text-center" id="imgfoto" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">                        
+                    </div>
+                </div>
+                
                 <hr>
                 <h2>Dados do responsável:</h2>
 

@@ -116,3 +116,20 @@ body.loading .modal {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.cardfotoempresa{
+    max-height: 220px;
+    max-width: 220px;
+    min-height: 220px;
+    min-width: 220px
+}
+/*IMG EMPRESA 
+------------------------------------------------------- */
+.imguploadempresa{
+    max-height: 400px;
+    max-width: 400px;
+    min-height: 400px;
+    min-width: 400px
+}
+#image-holder{
+    padding: 1em;
+}

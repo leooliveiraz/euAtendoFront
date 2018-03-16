@@ -80,6 +80,9 @@ function buscaempresa(){
             $("[name=cpf]").val(empresa.cpf);
             $("[name=dt_nascimento]").val(empresa.dt_nascimento);
             $("[name=site]").val(empresa.site);
+            if(empresa.path_img != null){
+                $("#imgfoto").attr("src",empresa.path_img);
+            }
 
         },
         error: function(jqXhr, textStatus, errorThrown) {
@@ -87,3 +90,35 @@ function buscaempresa(){
         }
     }); 
 }
+
+$("#fileUpload").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#image-holder");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "id": "imgfoto",
+                "src": e.target.result,
+                "class": "rounded-circle img-thumbnail imguploadempresa text-center"
+            }).appendTo(image_holder);
+            $("#fotoempresa").val(e.target.result);
+        }
+        image_holder.show();
+        $("#wrapper").show();
+        reader.readAsDataURL($(this)[0].files[0]);
+        
+        
+    } else{
+        console.log("Este navegador nao suporta FileReader.");
+    }    
+});
+
+
+$("#botaoupload").click(function(event){
+    event.preventDefault();
+    $("#fileUpload").click();
+});
