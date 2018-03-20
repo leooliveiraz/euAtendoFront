@@ -1,0 +1,140 @@
+/*
+    Theme Name: Medilab
+    Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+*/
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a, a:hover, a:focus, a:active{
+    outline: none;
+}
+
+.section-padding{
+	padding: 60px 0px;
+
+}
+h2 {
+    line-height: 20px;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+hr.botm-line {
+    height: 3px;
+    width: 60px;
+    background: #ffb737;
+    position: relative;
+    border: 0;
+    margin: 20px 0 20px 0;
+}
+
+/*BANNER */
+
+#banner {
+    background: url('../img/bg-banner.jpg') no-repeat fixed;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+    margin-top: -2em;
+}
+
+.bg-color {
+    background-color: RGBA(13, 70, 83, 0.78);
+    min-height: 650px;
+}
+
+.banner-info {
+    padding-top: 160px;
+}
+
+.banner-logo img {
+    display: inline-block;
+}
+
+.banner-text {
+    color: #fff;
+}
+
+.banner-text h1 {
+    font-family: 'Candal', sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.btn-appoint,
+.btn-appoint:hover,
+.btn-appoint:focus {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: rgba(12, 184, 182, 0.91);
+    border-radius: 3px;
+    color: #fff;
+}
+
+.overlay-detail a i {
+    text-align: center;
+    position: absolute;
+    bottom: 25px;
+    font-size: 38px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.text-primary i {
+    padding-top: 8px;
+    display: inline-block;
+    padding: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .banner-info {
+        padding-top: 4em;
+    }
+    #banner {
+        min-height: 400px;
+        max-height: 400px;
+    }
+
+    .bg-color {
+        min-height: 400px;
+        max-height: 400px;
+    }
+}
+
+/** SERVIÇOS **/
+
+.icon {
+	color: #0cb8b6;
+	font-size: 45px;
+	margin-bottom: 0px;
+}
+.service-info{
+	margin-bottom: 20px;
+}
+.icon-info h4{
+	padding-bottom: 0px;
+}
+.icon-info p{
+	font-size: 15px !important;
+}
