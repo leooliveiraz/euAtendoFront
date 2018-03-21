@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="manifest" href="../../manifest.json">
+
+    <title>euAtendo</title>
+
+    <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../res/css/app.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <!-- CONTEÚDO -->
+    <div class="corpo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Gerênciamento de Exames de Imagem!</h1>
+
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div id="menuprincipal">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="botaoadd">
+                        Adicionar Exames de Imagem
+                    </button>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="list-group ">
+                            <a class="list-group-item text-white list-group-item-action active">Exames de Imagem Cadastradas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menucadastro" class="invisivel">
+                <h2>Cadastro de Exames de Imagem</h2>
+                <form id="formexameimg">
+                    <div class="form-group">
+                        <label for="nome">Exame de Imagem:</label>
+                        <input type="text" class="form-control" name="nome" required aria-describedby="nome" id="nomeexameimg" placeholder="Informe o nome do exame de imagem">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="cadastrar">
+                        Cadastrar Exames de Imagem
+                    </button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="cancelar">
+                        Cancelar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM DO CONTEÚDO -->
+    <footer>
+    </footer>
+
+    <script src="../../res/js/jquery-3.3.1.min.js"></script>
+    <script src="../../res/js/jquery.mask.min.js"></script>
+    <script src="../../res/js/popper.min.js"></script>
+    <script src="../../res/js/bootstrap.min.js"></script>
+    <script src="../../res/js/fontawesome-all.min.js"></script>
+    <script src="../../res/js/sweetalert.js"></script>
+    <script src="../../res/js/app.js"></script>
+    <script src="../../ctr/estabelecimento/examesimagem.js"></script>
+</body>
+
+</html>
