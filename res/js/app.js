@@ -1,4 +1,5 @@
 var urlapp = 'http://localhost:9000/';
+var urlimg = 'http://localhost:8080/imagem/';
 
 
 function formToJSON(form) {

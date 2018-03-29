@@ -81,7 +81,7 @@ function buscaempresa(){
             $("[name=dt_nascimento]").val(empresa.dt_nascimento);
             $("[name=site]").val(empresa.site);
             if(empresa.path_img != null){
-                $("#imgfoto").attr("src",empresa.path_img);
+                carregarimagem(empresa.path_img);
             }
 
         },
@@ -122,3 +122,15 @@ $("#botaoupload").click(function(event){
     event.preventDefault();
     $("#fileUpload").click();
 });
+
+
+function carregarimagem(numeroimg){
+    $.ajax({
+        type: 'GET',
+        url: urlimg+numeroimg,
+        async: true,
+        success: function(data, textStatus, jQxhr) {    
+            $("#imgfoto").attr("src",data);        
+        }
+    }); 
+}

@@ -38,11 +38,13 @@ function getEstabelecimentos() {
                 if (empresa.path_img == null) {
                     empresa.path_img = "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==";
                 }
-                var cardempresa = '<div class="col-lg-6 cardempresa" id="empresa_' + empresa.id + '"> <div class="card"> <div class="card-body"> <div class="text-center cardlogoempresa"> <img class="rounded-circle img-thumbnail cardfotoempresa" src=' + empresa.path_img + ' alt="Generic placeholder image" width="190" height="190"> </div><br><h2 class="card-title text-center" id="nomehospital"></h2> <p class="card-text" id="endereco"> <i class="fas fa-map-marker-alt"></i> Endereço: </p><p class="card-text" id="telefones"> <i class="fas fa-phone-square"></i> Telefones: </p><p class="card-text" id="emails"> <i class="fas fa-envelope-square"></i> Emails: </p><p class="card-text" id="site"> <i class="fas fa-share-square"></i> Site:</p><div id="accordion"> <div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseConvenios_' + empresa.id + '" aria- aria-controls="collapseConvenios_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Convênios </div></a> <div id="collapseConvenios_' + empresa.id + '" class="collapse " aria-labelledby="Convênios" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaconvenios"> </ul> </div></div></div><div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseEspecialidade_' + empresa.id + '" aria- aria-controls="collapseEspecialidade_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Especialidades </div></a> <div id="collapseEspecialidade_' + empresa.id + '" class="collapse " aria-labelledby="Especialidades" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaespecialidade"> </ul> </div></div></div>'+
+                var cardempresa = '<div class="col-lg-6 cardempresa" id="empresa_' + empresa.id + '"> <div class="card"> <div class="card-body"> <div class="text-center cardlogoempresa"> <img id="fotoempresa" class="rounded-circle img-thumbnail cardfotoempresa" src=' + empresa.path_img + ' alt="Generic placeholder image" width="190" height="190"> </div><br><h2 class="card-title text-center" id="nomehospital"></h2> <p class="card-text" id="endereco"> <i class="fas fa-map-marker-alt"></i> Endereço: </p><p class="card-text" id="telefones"> <i class="fas fa-phone-square"></i> Telefones: </p><p class="card-text" id="emails"> <i class="fas fa-envelope-square"></i> Emails: </p><p class="card-text" id="site"> <i class="fas fa-share-square"></i> Site:</p><div id="accordion"> <div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseConvenios_' + empresa.id + '" aria- aria-controls="collapseConvenios_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Convênios </div></a> <div id="collapseConvenios_' + empresa.id + '" class="collapse " aria-labelledby="Convênios" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaconvenios"> </ul> </div></div></div><div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseEspecialidade_' + empresa.id + '" aria- aria-controls="collapseEspecialidade_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Especialidades </div></a> <div id="collapseEspecialidade_' + empresa.id + '" class="collapse " aria-labelledby="Especialidades" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaespecialidade"> </ul> </div></div></div>'+
                 '<div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseExameImg_' + empresa.id + '" aria- aria-controls="collapseExameImg_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Exames de Imagem </div></a> <div id="collapseExameImg_' + empresa.id + '" class="collapse " aria-labelledby="Exames de Imagem" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaexamesimg"> </ul> </div></div></div>'+
                 '<div class="card"> <a class="text-white " data-toggle="collapse" data-target="#collapseExameLab_' + empresa.id + '" aria- aria-controls="collapseExameLab_' + empresa.id + '"> <div class="card-header bg-primary tituloaccordion" id="headingOne"> Exames Laboratoriais </div></a> <div id="collapseExameLab_' + empresa.id + '" class="collapse " aria-labelledby="Exames Laboratoriais" data-parent="#accordion"> <div class="corpoaccordion"> <ul class="list-group list-group-flush" id="listaexameslab"> </ul> </div></div></div>' +'</div></div></div></div>';
                 content.append(cardempresa);
                 cardempresa = content.children("#empresa_" + empresa.id);
+                carregarimagem(cardempresa,empresa.path_img);
+                cardempresa.find("#fotoempresa").append(empresa.nome);
                 cardempresa.find("#nomehospital").append(empresa.nome);
                 cardempresa.find("#endereco").append(empresa.endereco + ", " + empresa.numero + ", " + empresa.bairro + ", " + empresa.cidade + " - " + empresa.uf);
                 cardempresa.find("#telefones").append(empresa.telefone_contato);
@@ -121,4 +123,16 @@ function pesquisaraoiniciar() {
     });
 
     console.log(data);
+}
+
+
+function carregarimagem(card ,numeroimg){
+    $.ajax({
+        type: 'GET',
+        url: urlimg+numeroimg,
+        async: true,
+        success: function(data, textStatus, jQxhr) {    
+            card.find("#fotoempresa").attr("src",data);        
+        }
+    }); 
 }
