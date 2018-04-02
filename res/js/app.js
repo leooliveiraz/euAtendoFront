@@ -1,5 +1,5 @@
-var urlapp = 'http://localhost:9000/';
-var urlimg = 'http://localhost:8080/imagem/';
+var urlapp = 'https://euatendo.herokuapp.com/';
+var urlimg = 'https://bdimagens.herokuapp.com/imagem/';
 
 
 function formToJSON(form) {
